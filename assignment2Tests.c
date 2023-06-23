@@ -28,10 +28,11 @@ void insertAfterN(node* head, int M, int N)
     // your code here
 }
 
-int isPalindrome(char *str) 
+int isPalindrome(char *str)
 {
-    // your code here
+   // your code here
 }
+
 
 node* makeNode(int data)
 {
@@ -131,32 +132,20 @@ int main(int argc, char** argv)
     printList(list);
     printf("\n");
 
-    char test1[] = "racecar";
-    char test2[] = "nogood";
-    char test3[] = "hannah";
-    char test4[] = "a";
-    char test5[] = "aad";
-    char test6[] = "ada";
+    char *testCases[] = {"racecar", "nogood", "hannah", "a", "aad", "ada"};
 
-    int r1, r2, r3, r4, r5, r6;
-
-    r1 = isPalindrome(test1);
-    r2 = isPalindrome(test2);
-    r3 = isPalindrome(test3);
-    r4 = isPalindrome(test4);
-    r5 = isPalindrome(test5);
-    r6 = isPalindrome(test6);
+    int answerKey[] = {1, 0, 1, 1, 0, 1};
+    int userAnswer;
 
     printf("Palindrome tests:\n");
-    printf("Test 1 returned %d\n", r1);
-    printf("Test 2 returned %d\n", r2);
-    printf("Test 3 returned %d\n", r3);
-    printf("Test 4 returned %d\n", r4);
-    printf("Test 5 returned %d\n", r5);
-    printf("Test 6 returned %d\n", r6);
+    for (int i = 0; i < sizeof(testCases)/sizeof(testCases[0]); i++)
+    {
+        userAnswer = isPalindrome(testCases[i]);
+        printf("Test %d expected %d, returned %d\n", i+1, answerKey[i], userAnswer);
+    }
+    
     printf("\n");
-
-    printf("If the linked list should insert a 500 after every 3.\n");
+    printf("The linked list should insert a 500 after every 3.\n");
     printf("It is possible that the random number generator didn't generate any 3s.\n");
     printf("If that is the case, just run the program again until it does.\n");
 
